@@ -24,10 +24,9 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 + If you need to restart after modifying *docker-compose.yml* restart with `docker-compose down` and `docker-compose up -d`
 
 # Images
-+ redis:alpine
-+ postgres:9.5-alpine
++ postgres:15.2-alpine
 + nginx:alpine
-+ php71-fpm:latest
++ php:8.2-fpm-alpine
 
 # SourceFiles
 
@@ -35,7 +34,7 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 
 
 ### php-fpm: Extensions PHP and PHP.INI
-+ Dockerfile: php7.1-pgsql php7.1-gd php-redis
++ Dockerfile: php8.2-pgsql php8.2-gd
 + php-ini-overrides.ini
 
 ### nginx: nginx.conf
