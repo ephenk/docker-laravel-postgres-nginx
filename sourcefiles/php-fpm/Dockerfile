@@ -6,8 +6,14 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Install selected extensions and other stuff
 RUN apt-get update \
-    && apt-get -y --no-install-recommends install  php8.2-pgsql php8.2-gd \
+    && apt-get -y --no-install-recommends install libpq-dev php8.2-pgsql php8.2-gd \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+
+RUN set -ex \
+  && apk --no-cache add \
+    postgresql-dev
+
+RUN docker-php-ext-install pdo pdo_pgsql
 
 # Install git
 RUN apt-get update \
