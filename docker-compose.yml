@@ -34,7 +34,7 @@ services:
       working_dir: /application
       volumes:
         - ./application:/application
-        - ./sourcefiles/php-fpm/php-ini-overrides.ini:/etc/php/8.2/fpm/conf.d/99-overrides.ini
+        - ./sourcefiles/php-fpm/php-ini-overrides.ini:/usr/local/etc/php/conf.d/99-overrides.ini
       networks:
           private_net:
               ipv4_address: 172.28.1.4
